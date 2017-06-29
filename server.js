@@ -3,8 +3,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var htmlRoutes = require('./app/routing/html-routes');
-var apiRoutes = require('./app/routing/api-routes');
+var htmlRoutes = require('./app/routing/htmlroutes');
+var apiRoutes = require('./app/routing/apiroutes');
 
 //Create instance of express, set up port
 var app = express();

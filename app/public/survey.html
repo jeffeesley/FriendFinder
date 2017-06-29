@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Finder</title>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	</head>
+	<body>
+
+	<div class="container">
+
+		<h2 class="magenta">Questions</h2>
+		<hr>
+		<h3 class="green">About Yourself</h3>
+		<h4>What's yo name?</h4>
+		<input type="text" name="" id="name" class="form-control" required >
+		<h4>What's a link to a picture of you?</h4>
+		<input type="text" name="" id="photo" class="form-control" required >
+		<hr>
+
+		<h3>Deer suck. Like so hard</h3>
+	 	<select class = "select" id = "q1">
+ 			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+		<h3>Hats are cool</h3>
+		<select class = "select" id = "q2">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3>I'm down with space</h3>
+		<select class = "select" id = "q3">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+		<h3>I'm kind of a prick</h3>
+		<select class = "select" id = "q4">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+		<h3>Some things are pretty sweet</h3>
+		<select class = "select" id = "q5">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+		<h3>I like trains</h3>
+		<select class = "select" id = "q6">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+		<h3>I don't like trains</h3>
+		<select class = "select" id = "q7">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+		<h3>Don't drink and drive</h3>
+		<select class = "select" id = "q8">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+
+		<h3>Bears could defnitely kill me, but I still like them they seem like ok dudes</h3>
+		<select class = "select" id = "q9">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Disagree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+		
+		<h3>Jeff nailed it on this homework assignment</h3>
+		<select class = "select" id = "q10">
+			<option value= "" disabled selected>Select an Option</option>
+      <option value= "1">1 (Strongly Agree)</option>
+      <option value= "2">2</option>
+      <option value= "3">3</option>
+      <option value= "4">4</option>
+      <option value= "5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+
+    <button type="submit" class="btn" id="submit"><i aria-hidden="true"></i> Submit</button>
+   </div>
+		
+		<div id = "surveyModal" class = "modal">
+			<div class = "modal-content">
+				<h3>Your Best Frand</h3>
+				<h2 id="matchName"></h2>
+        <img id="matchImg" src="" alt="No Image" width = 250px>
+        </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+		
+
+<script type="text/javascript">
+
+			$("#submit").on("click", function() {
+			// Form validation
+			function validate() {
+				var valid = true;
+				$('.form-control').each(function() {
+					if ($(this).val() === '')
+						valid = false;
+				});
+				$('.select').each(function() {
+					if ($(this).val() === null)
+						valid = false
+				});
+				return valid;
+			}
+			if (validate() == true) {
+				var q = ['1','2','3','4','5','6','7','8','9','10'];
+				var scores = [];
+				for (var i in q) {
+					var val = $('#q' + q[i]).val();
+					scores.push(val)
+				};
+				var userData = {
+					name: $("#name").val(),
+					photo: $("#photo").val(),
+					scores: scores
+				};
+				var siteURL = window.location.origin;
+				// AJAX post the data to the friends API. 
+				$.post(siteURL + "/api/friends", userData, function(data) {
+					// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+					$("#matchName").text(data.name);
+					$('#matchImg').attr("src", data.photo);
+					// Show the modal with the best match 
+					$("#surveyModal").modal('toggle');
+					
+				});
+			} else {
+				alert("Please fill out all fields before submitting!");
+			}
+			return false;
+		});
+  </script>
+
+</body>
+</html>
